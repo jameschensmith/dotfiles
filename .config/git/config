@@ -1,0 +1,10 @@
+# Documentation: https://git-scm.com/docs/git-config#_configuration_file
+
+[user]
+	name = James Chen-Smith
+
+[init]
+	defaultBranch = trunk
+
+[include]
+	path = config-untracked
