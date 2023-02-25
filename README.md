@@ -16,7 +16,7 @@ dots config --local status.showUntrackedFiles no
 
 ```sh
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-dots rm -rf $HOME
+dots rm -rf "$HOME"
 rm -rf "$XDG_DATA_HOME"/dotfiles.git
 ```
 
