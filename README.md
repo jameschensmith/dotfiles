@@ -2,6 +2,24 @@
 
 My personal dotfiles.
 
+## Install
+
+```sh
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+git clone --bare git@git.sr.ht:~jameschensmith/dotfiles "$XDG_DATA_HOME"/dotfiles.git
+alias dots='git --git-dir="$XDG_DATA_HOME"/dotfiles.git --work-tree="$HOME"'
+dots checkout
+dots config --local status.showUntrackedFiles no
+```
+
+## Uninstall
+
+```sh
+export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+dots rm -rf $HOME
+rm -rf "$XDG_DATA_HOME"/dotfiles.git
+```
+
 ## Public Domain
 
 In an effort to dedicate all of my work to the public domain, copyright and
