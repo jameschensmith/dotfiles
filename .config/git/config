@@ -6,5 +6,9 @@
 [init]
 	defaultBranch = trunk
 
+[alias]
+	commit-empty = commit --allow-empty-message -m ''
+	list-aliases = --list-cmds=alias
+
 [include]
 	path = config-untracked
