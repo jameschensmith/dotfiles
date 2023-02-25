@@ -1,5 +1,10 @@
 # Documentation: https://zsh.org
 
+# Source additional POSIX shell scripts.
+for file in "$XDG_CONFIG_HOME"/shell/*.sh; do
+	source "$file";
+done
+
 # Create required directories.
 mkdir -p "$XDG_STATE_HOME/zsh" "$XDG_CACHE_HOME/zsh"
 
