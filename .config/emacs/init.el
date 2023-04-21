@@ -15,6 +15,12 @@
 (eval-when-compile
   (require 'use-package))
 
+;;;; Languages
+
+(use-package eglot :ensure t)
+
+(use-package zig-mode :ensure t)
+
 ;;;; Miscellaneous
 
 (setq-default
