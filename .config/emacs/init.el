@@ -1,5 +1,10 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
+
+;;; Code:
+
+;;;; Package
+
 (require 'package)
 
 (package-initialize)
@@ -10,5 +15,13 @@
 
 (eval-when-compile
   (require 'use-package))
+
+;;;; Miscellaneous
+
+(setq-default
+ backup-directory-alist
+ `(("." . ,(concat user-emacs-directory "backups")))
+
+ custom-file null-device)
 
 ;;; init.el ends here
