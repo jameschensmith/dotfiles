@@ -1,6 +1,5 @@
 ;;; init.el -*- lexical-binding: t; -*-
 
-
 ;;; Code:
 
 ;;;; Package
@@ -23,5 +22,10 @@
  `(("." . ,(concat user-emacs-directory "backups")))
 
  custom-file null-device)
+
+(use-package eat
+  :ensure t
+  :custom
+  (eat-kill-buffer-on-exit t))
 
 ;;; init.el ends here
