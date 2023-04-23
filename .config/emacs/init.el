@@ -31,7 +31,10 @@
 
  custom-file null-device)
 
-(use-package corfu :ensure t)
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode))
 
 (use-package eat
   :ensure t
