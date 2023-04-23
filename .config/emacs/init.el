@@ -31,6 +31,8 @@
 
  custom-file null-device)
 
+(use-package corfu :ensure t)
+
 (use-package eat
   :ensure t
   :custom
