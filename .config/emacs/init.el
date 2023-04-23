@@ -36,6 +36,11 @@
   :init
   (global-corfu-mode))
 
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
 (use-package eat
   :ensure t
   :custom
