@@ -21,6 +21,8 @@
 
 (use-package markdown-mode :ensure t)
 
+(use-package rust-mode :ensure t)
+
 (use-package zig-mode :ensure t)
 
 ;;;; Miscellaneous
