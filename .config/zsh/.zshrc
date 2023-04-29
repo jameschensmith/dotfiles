@@ -1,7 +1,7 @@
 # Documentation: https://zsh.org
 
 # Source additional POSIX shell scripts.
-for file in "$XDG_CONFIG_HOME"/shell/*.sh; do
+for file in "$XDG_CONFIG_HOME"/sh/*.sh; do
 	source "$file";
 done
 
