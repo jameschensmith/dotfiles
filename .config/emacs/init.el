@@ -15,6 +15,15 @@
 (eval-when-compile
   (require 'use-package))
 
+;;;; Dired
+
+(use-package dired-x
+  :hook (dired-mode . dired-omit-mode)
+  :bind (:map dired-mode-map
+	      ("o" . dired-omit-mode))
+  :config
+  (setq dired-omit-verbose nil))
+
 ;;;; Languages
 
 (use-package eglot :ensure t)
