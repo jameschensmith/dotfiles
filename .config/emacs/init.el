@@ -103,4 +103,9 @@
 		    (alist-get 'Data json))))
 	dashboard-set-footer dashboard-footer-messages))
 
+(use-package ef-themes
+  :ensure t
+  :config
+  (load-theme 'ef-light :no-confirm))
+
 ;;; init.el ends here
