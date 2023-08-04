@@ -5,6 +5,7 @@
 ;;;; Package
 
 (require 'package)
+(require 'json)
 
 (setq-default
  package-archives
@@ -79,5 +80,27 @@
   :ensure t
   :custom
   (eat-kill-buffer-on-exit t))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-banner-logo-title nil
+	dashboard-items nil
+	dashboard-footer-messages
+	;; See: https://github.com/NonlinearFruit/Creeds.json
+	(when (file-exists-p (concat user-emacs-directory "catechism.json"))
+	  (let ((json (json-read-file (concat user-emacs-directory "catechism.json"))))
+	    (mapcar (lambda (qa)
+		      (let* ((number (alist-get 'Number qa))
+			     (question (alist-get 'Question qa))
+			     (answer (alist-get 'Answer qa)))
+			(with-temp-buffer
+			  (insert (format "Q%d %s\n\n%s" number question answer))
+			  (setq fill-column (min 70 (/ (* 2 (window-width)) 3)))
+			  (fill-region (point-min) (point-max))
+			  (buffer-string))))
+		    (alist-get 'Data json))))
+	dashboard-set-footer dashboard-footer-messages))
 
 ;;; init.el ends here
