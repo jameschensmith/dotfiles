@@ -49,11 +49,11 @@
 
 ;;;; Miscellaneous
 
-(setq-default
- backup-directory-alist
- `(("." . ,(concat user-emacs-directory "backups")))
-
- custom-file null-device)
+(use-package no-littering
+  :ensure t
+  :config
+  (no-littering-theme-backups)
+  (setq custom-file null-device))
 
 (use-package devil
   :ensure t
