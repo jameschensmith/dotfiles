@@ -6,7 +6,7 @@ My personal dotfiles.
 
 ```sh
 export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
-git clone --bare git@git.sr.ht:~jameschensmith/dotfiles "$XDG_DATA_HOME"/dotfiles.git
+git clone --bare git@github.com:jameschensmith/dotfiles.git "$XDG_DATA_HOME"/dotfiles.git
 alias dots='git --git-dir="$XDG_DATA_HOME"/dotfiles.git --work-tree="$HOME"'
 dots checkout
 dots config --local status.showUntrackedFiles no
