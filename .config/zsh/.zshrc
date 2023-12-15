@@ -2,7 +2,7 @@
 
 # Source additional POSIX shell scripts.
 for file in "$XDG_CONFIG_HOME"/sh/*.sh; do
-	source "$file";
+    source "$file";
 done
 
 # Create required directories.
@@ -21,3 +21,7 @@ setopt SHARE_HISTORY
 # Configure autocompletion.
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
+
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
