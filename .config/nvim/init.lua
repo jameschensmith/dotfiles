@@ -23,6 +23,17 @@ require('lazy').setup({
             'folke/neodev.nvim',
         },
     },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        config = function()
+            require('nvim-treesitter.configs').setup({
+                ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
+                auto_install = false,
+                highlight = { enable = true },
+            })
+        end
+    },
 })
 
 -- NOTE: `mason.nvim` requires setup to be done in this order
