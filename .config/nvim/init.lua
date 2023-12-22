@@ -68,3 +68,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, opts)
     end,
 })
+
+vim.cmd.colorscheme('habamax')
