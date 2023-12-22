@@ -34,6 +34,14 @@ require('lazy').setup({
             })
         end
     },
+    {
+        'LhKipp/nvim-nu',
+        build = ':TSInstall nu',
+        dependencies = 'nvim-treesitter/nvim-treesitter',
+        opts = {
+            use_lsp_features = false,
+        },
+    },
 })
 
 -- NOTE: `mason.nvim` requires setup to be done in this order
