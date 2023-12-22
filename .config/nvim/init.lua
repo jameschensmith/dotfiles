@@ -31,8 +31,10 @@ require('mason-lspconfig').setup()
 require('neodev').setup()
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
-    Lua = {
-        telemetry = { enable = false },
+    settings = {
+        Lua = {
+            telemetry = { enable = false },
+        },
     },
 })
 
