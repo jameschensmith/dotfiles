@@ -12,3 +12,6 @@
 
 [include]
 	path = config-untracked
+
+[interactive]
+	singleKey = true
