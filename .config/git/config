@@ -15,3 +15,7 @@
 
 [interactive]
 	singleKey = true
+
+[diff]
+	colormoved = "default"
+	colormovedws = "allow-indentation-change"
