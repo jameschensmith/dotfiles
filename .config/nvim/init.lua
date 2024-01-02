@@ -47,6 +47,13 @@ require('lazy').setup({
             use_lsp_features = false,
         },
     },
+    {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+        },
+    },
 })
 
 require('neodev').setup()
