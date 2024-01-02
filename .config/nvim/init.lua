@@ -16,6 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     {
+        'miikanissi/modus-themes.nvim',
+        priority = 1000,
+        config = function()
+            vim.cmd([[colorscheme modus_vivendi]])
+        end
+    },
+    {
         'neovim/nvim-lspconfig',
         dependencies = {
             'williamboman/mason.nvim',
@@ -87,5 +94,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, opts)
     end,
 })
-
-vim.cmd.colorscheme('habamax')
