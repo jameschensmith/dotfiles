@@ -25,8 +25,6 @@ require('lazy').setup({
     {
         'neovim/nvim-lspconfig',
         dependencies = {
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
             'folke/neodev.nvim',
         },
     },
@@ -51,9 +49,6 @@ require('lazy').setup({
     },
 })
 
--- NOTE: `mason.nvim` requires setup to be done in this order
-require('mason').setup()
-require('mason-lspconfig').setup()
 require('neodev').setup()
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
