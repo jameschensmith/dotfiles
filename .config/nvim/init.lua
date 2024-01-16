@@ -24,9 +24,6 @@ require('lazy').setup({
     },
     {
         'neovim/nvim-lspconfig',
-        dependencies = {
-            'folke/neodev.nvim',
-        },
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -63,7 +60,6 @@ require('lazy').setup({
     },
 })
 
-require('neodev').setup()
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup({
     settings = {
