@@ -26,25 +26,6 @@ require('lazy').setup({
         'neovim/nvim-lspconfig',
     },
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        config = function()
-            require('nvim-treesitter.configs').setup({
-                ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
-                auto_install = false,
-                highlight = { enable = true },
-            })
-        end
-    },
-    {
-        'LhKipp/nvim-nu',
-        build = ':TSInstall nu',
-        dependencies = 'nvim-treesitter/nvim-treesitter',
-        opts = {
-            use_lsp_features = false,
-        },
-    },
-    {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         dependencies = {
@@ -60,8 +41,14 @@ require('lazy').setup({
     },
 })
 
+vim.cmd([[syntax off]])
+
 local lspconfig = require('lspconfig')
+local function on_attach(client, _)
+    client.server_capabilities.semanticTokensProvider = nil
+end
 lspconfig.lua_ls.setup({
+    on_attach = on_attach,
     settings = {
         Lua = {
             telemetry = { enable = false },
@@ -69,6 +56,7 @@ lspconfig.lua_ls.setup({
     },
 })
 lspconfig.omnisharp.setup({
+    on_attach = on_attach,
     cmd = { "Omnisharp", "--languageserver" },
 })
 
