@@ -20,7 +20,7 @@ require('lazy').setup({
         priority = 1000,
         config = function()
             vim.cmd([[colorscheme modus_vivendi]])
-        end
+        end,
     },
     {
         'neovim/nvim-lspconfig',
@@ -37,7 +37,7 @@ require('lazy').setup({
             vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-        end
+        end,
     },
 })
 
@@ -57,7 +57,7 @@ lspconfig.lua_ls.setup({
 })
 lspconfig.omnisharp.setup({
     on_attach = on_attach,
-    cmd = { "Omnisharp", "--languageserver" },
+    cmd = { 'Omnisharp', '--languageserver' },
 })
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
